@@ -2,6 +2,8 @@ extends includes/layout.pug
 
 block content
   include ./includes/mixins/post-ui.pug
+  - const pinFirst = (a, b) => { const topA = Number(a.top) || (a.sticky > 0 ? 1 : 0); const topB = Number(b.top) || (b.sticky > 0 ? 1 : 0); if (topA !== topB) return topB - topA; return b.date - a.date; }
+  - page.posts.data = page.posts.data.slice().sort(pinFirst)
   #recent-posts.recent-posts
     include includes/categoryGroup.pug
     +postUI
