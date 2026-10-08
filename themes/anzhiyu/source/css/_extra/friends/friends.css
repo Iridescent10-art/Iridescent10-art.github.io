@@ -6,7 +6,7 @@
   margin-top: 0px;
 }
 body[data-type="fcircle"] #web_bg {
-  background-color: #f7f9fe;
+  background-color: #f7f3e8;
 }
 
 [data-theme="dark"] body[data-type="fcircle"] #web_bg {
