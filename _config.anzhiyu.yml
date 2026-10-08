@@ -39,7 +39,7 @@ nav:
     - title: 旅途中
       item:
         - name: 原神官网
-          link: https://genshin.hoyoverse.com/
+          link: https://ys.mihoyo.com/
           icon: /favicon.ico
 
 # mourn （哀悼日，指定日期网站简单变灰，不包括滚动条）
@@ -527,7 +527,7 @@ footer:
       enable: false
       link: /copyright
     linkList:
-      - link: https://genshin.hoyoverse.com/
+      - link: https://ys.mihoyo.com/
         text: 原神官网
       # - link: https://image.anheyu.com
       #   text: 图床
@@ -1049,21 +1049,35 @@ css_prefix: true
 home_top:
   enable: true # 开关
   timemode: date #date/updated
-  title: ✈️「提瓦特国际机场」✈️
-  subTitle: 旅行者，欢迎来到 ✈️「提瓦特国际机场」✈️，七国航线任你起降。
+  title: 你从世界之外漂流而来，降临大地。
+  subTitle: 在这广阔的世界中，你自由旅行、结识同伴、寻找掌控尘世元素的七神，直到与分离的血亲重聚，在终点见证一切旅途的沉淀。
   siteText: 提瓦特国际机场 · 航班日志
-  # 分类快捷入口：文章分类暂时全部取消，这里先留空；确定分类后再补
-  category: []
+  category:
+    - name: 原神
+      path: /categories/原神/
+      shadow: var(--anzhiyu-shadow-blue)
+      class: blue
+      icon: anzhiyu-icon-dove
+    - name: 提瓦特国际机场
+      path: /categories/提瓦特国际机场/
+      shadow: var(--anzhiyu-shadow-red)
+      class: red
+      icon: anzhiyu-icon-fire
+    - name: 旅行日志
+      path: /categories/旅行日志/
+      shadow: var(--anzhiyu-shadow-green)
+      class: green
+      icon: anzhiyu-icon-book
   default_descr: 在七国之间旅行，记录风与岩的故事。
   swiper:
     enable: false
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    tips: 原神主题
-    title: ✈️「提瓦特国际机场」✈️
+    tips: ""
+    title: 原神官网
     image: https://t.alcy.cc/ys
-    link: https://genshin.hoyoverse.com/
+    link: https://ys.mihoyo.com/
 
 # 朋友圈配置
 friends_vue:
@@ -1234,7 +1248,7 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - "<style>#page-header.full_page{background-image:url('https://t.alcy.cc/ysz')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.full_page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#site-info,#scroll-down{z-index:2}@media(max-width:768px){#page-header.full_page{background-image:url('https://t.alcy.cc/ysmp')!important}}</style>"
+    - "<style>#page-header.full_page{background-image:url('https://t.alcy.cc/ysz')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.full_page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#site-info,#scroll-down{z-index:2}@media(max-width:768px){#page-header.full_page{background-image:url('https://t.alcy.cc/ysmp')!important}}#random-banner .banners-title{top:2rem}#random-banner .banners-title-big{font-size:30px;margin-bottom:6px}</style>"
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 
