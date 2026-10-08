@@ -1006,8 +1006,8 @@ pjax:
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
 
 # Snackbar (Toast Notification 弹窗)
 # https://github.com/polonel/SnackBar
@@ -1151,12 +1151,13 @@ comment_barrage_config:
 # 左下角音乐配置项
 # https://github.com/metowolf/MetingJS
 nav_music:
-  enable: false
+  enable: true
   console_widescreen_music: false # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
-  id: 8152976493
+  type: song # 单曲模式（默认 playlist，可填 song/album/playlist/artist）
+  id: 1818031620 # 《让风告诉你》- 花玲 / 喵☆酱 / 宴宁 / kinsen（原神 2021 新春同人拜年纪单品）
   server: netease
-  volume: 0.7 # 默认音量
-  all_playlist: https://y.qq.com/n/ryqq/playlist/8802438608
+  volume: 0.6 # 默认音量
+  all_playlist: https://music.163.com/#/song?id=1818031620
 
 # 路径为 /music 的音乐页面默认加载的歌单 1. nav_music 2. custom
 music_page_default: nav_music
