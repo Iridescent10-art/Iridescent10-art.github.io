@@ -1155,6 +1155,7 @@ nav_music:
   type: song # 单曲模式（默认 playlist，可填 song/album/playlist/artist）
   id: 1818031620 # 《让风告诉你》- 花玲 / 喵☆酱 / 宴宁 / kinsen（原神 2021 新春同人拜年纪单品）
   server: netease
+  api: https://api.injahow.cn/meting/?server=:server&type=:type&id=:id # 音乐接口（默认的 api.i-meto.com 已失效返回 404，换用这个可正常取到音频）
   volume: 0.6 # 默认音量
   all_playlist: https://music.163.com/#/song?id=1818031620
 
