@@ -28,7 +28,7 @@ nav:
   menu:
     - title: 世界
       item:
-        - name: 提瓦特手记
+        - name: ✈️「提瓦特国际机场」✈️
           link: /
           icon: /favicon.ico
     - title: 旅途中
@@ -234,7 +234,7 @@ post_copyright:
   enable: true
   decode: false
   author_href:
-  location: 提瓦特
+  location: ✈️「提瓦特国际机场」✈️
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
   avatarSinks: false # hover时头像下沉
@@ -422,10 +422,10 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text: 愿风指引你的道路 · 提瓦特手记
+  custom_text: 愿风指引你的道路 · ✈️「提瓦特国际机场」✈️
   runtime:
     enable: false
-    launch_time: 09/28/2020 00:00:00 # 提瓦特开放日
+    launch_time: 09/28/2020 00:00:00 # ✈️「提瓦特国际机场」✈️ 首航日
     work_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
     work_description: 距离月入25k也就还差一个大佬带我~
     offduty_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
@@ -1044,17 +1044,17 @@ css_prefix: true
 home_top:
   enable: true # 开关
   timemode: date #date/updated
-  title: 风起提瓦特
-  subTitle: 旅行者，欢迎来到提瓦特大陆。
-  siteText: 提瓦特旅行日志
+  title: ✈️「提瓦特国际机场」✈️
+  subTitle: 旅行者，欢迎来到 ✈️「提瓦特国际机场」✈️，七国航线任你起降。
+  siteText: 提瓦特国际机场 · 航班日志
   category:
     - name: 原神
       path: /categories/原神/
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
       icon: anzhiyu-icon-dove
-    - name: 提瓦特
-      path: /categories/提瓦特/
+    - name: 提瓦特国际机场
+      path: /categories/提瓦特国际机场/
       shadow: var(--anzhiyu-shadow-red)
       class: red
       icon: anzhiyu-icon-fire
@@ -1070,7 +1070,7 @@ home_top:
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
     tips: 原神主题
-    title: 风起提瓦特
+    title: ✈️「提瓦特国际机场」✈️
     image: https://t.alcy.cc/ys
     link: https://genshin.hoyoverse.com/
 
@@ -1114,7 +1114,7 @@ umami:
 # 标签卖萌
 diytitle:
   enable: true
-  leaveTitle: 旅行者，别急着离开提瓦特！
+  leaveTitle: 旅行者，别急着离开 ✈️「提瓦特国际机场」✈️！
   backTitle: 欢迎回来，旅行者！
 
 # 留言弹幕配置
