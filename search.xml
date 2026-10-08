@@ -4,18 +4,84 @@
   
     
     <entry>
-      <title>旅行者，欢迎来到提瓦特</title>
+      <title>✈️ 提瓦特国际机场 · 节点观测站上线</title>
+      <link href="/posts/%E6%8F%90%E7%93%A6%E7%89%B9%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA-%E8%8A%82%E7%82%B9%E8%A7%82%E6%B5%8B%E7%AB%99/"/>
+      <url>/posts/%E6%8F%90%E7%93%A6%E7%89%B9%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA-%E8%8A%82%E7%82%B9%E8%A7%82%E6%B5%8B%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<p>机场有了航站楼，也需要一座塔台。<strong>节点观测站</strong>就是「提瓦特国际机场」的塔台页面，用来实时盯住每一台服务器的负载、资源占用与网络质量：</p><p><strong>👉 <a href="https://us.261024.xyz/">https://us.261024.xyz</a></strong></p><p>面板基于开源的 <strong>Komari Monitor</strong>（版本 1.4.3，主题 <code>komari-observatory</code>）自建，站点标题为 DM🐣。整个页面被做成了提瓦特观测站的风格：背景是城堡与草原，右侧悬浮着一颗由光点组成的旋转地球，所有数据都通过 WebSocket 实时刷新。</p><p><img src="/img/vps-panel.png" alt="提瓦特国际机场 · 节点观测站面板" title="节点观测站首屏：全球节点观测 + 总览卡片 + 节点列表"></p><h2 id="一、首屏：全球节点观测"><a href="#一、首屏：全球节点观测" class="headerlink" title="一、首屏：全球节点观测"></a>一、首屏：全球节点观测</h2><p>页面打开后，主标题是 <strong>全球节点观测</strong>，副标题写着「DM🐣 的实时负载、资源占用与网络质量。」右侧同时给出三项核心状态：</p><table><thead><tr><th>指标</th><th>含义</th></tr></thead><tbody><tr><td>ONLINE 4 &#x2F; 4</td><td>当前在线节点数与总节点数</td></tr><tr><td>TRANSPORT WEBSOCKET</td><td>数据推送方式为 WebSocket 长连接，属于秒级刷新</td></tr><tr><td>TODAY COST ¥13.58 CNY</td><td>今日产生的费用折算金额</td></tr></tbody></table><h2 id="二、总览卡片：一眼看完机场体检报告"><a href="#二、总览卡片：一眼看完机场体检报告" class="headerlink" title="二、总览卡片：一眼看完机场体检报告"></a>二、总览卡片：一眼看完机场体检报告</h2><p>主标题下方是六张总览卡片，分别汇总所有节点的内存、硬盘、流量与实时带宽：</p><table><thead><tr><th>卡片</th><th>面板上显示的内容</th></tr></thead><tbody><tr><td>内存用量</td><td>3.2 GB &#x2F; 10.5 GB，MEM 标签</td></tr><tr><td>硬盘用量</td><td>2.98 TB &#x2F; 4.63 TB，DSK 标签</td></tr><tr><td>付款总额</td><td>¥474.99 CNY，VAL 标签</td></tr><tr><td>累计流量</td><td>372.0 GB，SUR 标签</td></tr><tr><td>实时上行</td><td>69 KB&#x2F;s，UP 标签</td></tr><tr><td>实时下行</td><td>130 KB&#x2F;s，DLR 标签</td></tr></tbody></table><p>这些数字都是所有节点聚合后的结果，鼠标停留在卡片上还能看到更细的说明，不需要逐台服务器去登陆检查。</p><h2 id="三、节点列表：每台航班一个座位"><a href="#三、节点列表：每台航班一个座位" class="headerlink" title="三、节点列表：每台航班一个座位"></a>三、节点列表：每台航班一个座位</h2><p>再往下是节点卡片列表，标题是「全部节点」（也可以先按地区筛选）。每张卡片给出节点名、地区旗帜、在线时长，以及 CPU 与内存的实时占用率：</p><ul><li><strong>US🐣RN</strong> — 🇺🇸 美国节点，卡片上显示在线 2 天</li><li><strong>JP🐣AC</strong> — 🇯🇵 日本节点，卡片上显示在线 29 天</li><li><strong>HK🐣AC</strong> — 🇭🇰 香港节点，卡片上显示在线 17 天</li><li><strong>NAS-iridescent10</strong> — 🇨🇳 家里的 NAS，用来放观测站之外的个人服务</li></ul><p>卡片顶部的「资源状态 &#x2F; RESOURCE」区块会实时刷新 CPU 与内存占用，右侧的时区与地区图标则方便快速定位。右上角还有一组切换按钮，可以在卡片视图和更紧凑的列表视图之间切换。</p><p>后台登记的信息里，每台机器都带有 CPU 型号、虚拟化方式、系统版本、内核、价格与流量上限、到期时间等字段，所以面板侧边还能展开查看这些「飞机档案」。</p><h2 id="四、右侧的地球：航线拓扑"><a href="#四、右侧的地球：航线拓扑" class="headerlink" title="四、右侧的地球：航线拓扑"></a>四、右侧的地球：航线拓扑</h2><p>首屏右侧那颗旋转的深色地球，是把节点按经纬度投影到球面上的实时连接图：光点代表节点，亮线代表连接。它和左侧的节点列表联动，用来看整体拓扑比翻列表直观得多。</p><h2 id="五、这座塔台用来干什么"><a href="#五、这座塔台用来干什么" class="headerlink" title="五、这座塔台用来干什么"></a>五、这座塔台用来干什么</h2><ul><li><strong>看在场情况</strong>：哪个节点掉线、哪台机器负载飙高，首屏 ONLINE 与卡片颜色会立刻反映出来。</li><li><strong>看流量水位</strong>：累计流量与流量上限对比，避免月底突然断航。</li><li><strong>看网络质量</strong>：实时上下行带宽配合历史曲线，能判断线路是不是在抖动。</li><li><strong>看账单</strong>：付款总额、今日花费、到期时间都写在面板上，续费不会漏。</li></ul><h2 id="六、相关链接"><a href="#六、相关链接" class="headerlink" title="六、相关链接"></a>六、相关链接</h2><ul><li>节点观测站：<a href="https://us.261024.xyz/">https://us.261024.xyz</a></li><li>汇聚订阅站：<a href="https://dm.261024.xyz/explore">https://dm.261024.xyz/explore</a></li></ul><blockquote><p>塔台在此，愿每一次起降都平安顺利。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 提瓦特国际机场 </category>
+          
+          <category> 节点监控 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 提瓦特国际机场 </tag>
+            
+            <tag> Komari </tag>
+            
+            <tag> VPS 监控 </tag>
+            
+            <tag> 观测站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>✈️ 提瓦特国际机场 · 汇聚订阅站已经上线</title>
+      <link href="/posts/%E6%8F%90%E7%93%A6%E7%89%B9%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA-%E6%B1%87%E8%81%9A%E8%AE%A2%E9%98%85%E7%AB%99/"/>
+      <url>/posts/%E6%8F%90%E7%93%A6%E7%89%B9%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA-%E6%B1%87%E8%81%9A%E8%AE%A2%E9%98%85%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><strong>提瓦特国际机场</strong> 全称：提瓦特七国国际航空枢纽暨天理统一航站楼。</p></blockquote><p>七国的航班订阅，如今都收在同一个航站楼里。汇聚订阅站的入口是：</p><p><strong>👉 <a href="https://dm.261024.xyz/explore">https://dm.261024.xyz/explore</a></strong></p><p>这一页由部署在 Cloudflare 上的订阅聚合与转换面板 <strong>MiSub</strong> 驱动（页脚显示的版本为 v2.7.0），它会把各家航线的订阅地址汇集起来、统一转换后再分发给旅客。下面按首屏从上到下的顺序，把页面内容完整介绍一遍。</p><p><img src="/img/misub-explore.png" alt="提瓦特国际机场 · 汇聚订阅站 explore 页首屏" title="汇聚订阅站首屏：精选订阅标签 + 机场自我介绍"></p><h2 id="一、航站楼大厅：机场自我介绍"><a href="#一、航站楼大厅：机场自我介绍" class="headerlink" title="一、航站楼大厅：机场自我介绍"></a>一、航站楼大厅：机场自我介绍</h2><p>打开链接后，最先看到的是「精选订阅」标签，紧接着是一行非常大的欢迎语：</p><blockquote><p>原神启动！！！</p><p>✈️「提瓦特国际机场」✈️</p></blockquote><p>标题下方是机场的官方简介，原文照录：</p><blockquote><p>提瓦特国际机场 全称：提瓦特七国国际航空枢纽暨天理统一航站楼。位于璃月港与蒙德城之间的战略空域，承担蒙德、璃月、稻妻、须弥、枫丹、纳塔及至冬七国国际航班运输任务。机场采用风元素辅助起降系统，岩元素跑道维护技术，雷元素快速安检设备以及枫丹自主机械行李分拣系统。由于须弥学者大量前往枫丹参加学术会议，机场曾一度出现严重的知识分子航班延误现象。目前机场年旅客吞吐量约为 1.2 亿名旅行者，其中约有三分之一拒绝购买机场里的原石饮料。值机柜台：凯瑟琳。安检负责人：九条裟罗。机场广播：温迪。航空公司董事长：凝光。机场建设总顾问：钟离。机场财政状况：那维莱特表示不予置评。</p></blockquote><p>简介块旁边还留了一个 <strong><a href="https://genshin.hoyoverse.com/">原神官方网站</a></strong> 的入口，方便旅客随时回到提瓦特大陆的官方页面。右上角则是登录按钮、主题切换、语言切换与 GitHub 入口。</p><h2 id="二、航班公告：机场正在例行维护"><a href="#二、航班公告：机场正在例行维护" class="headerlink" title="二、航班公告：机场正在例行维护"></a>二、航班公告：机场正在例行维护</h2><p>页面中段挂着机场的运行管理委员会公告，当前状态是 <strong>正在维护中</strong>：</p><blockquote><p>尊敬的各位旅客：</p><p>由于提瓦特国际机场航站楼及七国跨境航空系统正在进行例行维护，目前机场暂时停止办理值机、安检、登机及行李托运业务。</p></blockquote><p>公告里逐条列出了各个航站楼的维护项目：</p><table><thead><tr><th>航站楼</th><th>维护内容</th></tr></thead><tbody><tr><td>蒙德</td><td>风元素起降系统检修</td></tr><tr><td>璃月</td><td>国际航站楼岩元素跑道维护</td></tr><tr><td>稻妻</td><td>航班雷暴天气监测系统升级</td></tr><tr><td>须弥</td><td>航站楼智慧交通终端调试</td></tr><tr><td>枫丹</td><td>水下航空联运系统例行检查</td></tr><tr><td>纳塔</td><td>航站楼防火安全设施升级</td></tr><tr><td>至冬</td><td>国际航线调度系统维护</td></tr><tr><td>天空岛</td><td>方向航班因不可抗力原因暂缓开放</td></tr></tbody></table><p>公告末尾由「提瓦特国际机场运行管理委员会」署名，并注明「本公告最终解释权归天理维序机关所有」，页面底部显示最后更新时间为 2026&#x2F;10&#x2F;8 19:28:26。也就是说，这一段时间里订阅列表会暂时收起，等维护结束、机场重新开放值机后再回到常态。</p><h2 id="三、必备工具：全平台客户端下载"><a href="#三、必备工具：全平台客户端下载" class="headerlink" title="三、必备工具：全平台客户端下载"></a>三、必备工具：全平台客户端下载</h2><p>公告下方是「必备工具」区块，标题写着「必备客户端」：为了获得最佳体验，可以直接在页面上下载对应平台的客户端。每张卡片都标注了支持平台、版本号与一句简短说明，右侧是获取下载按钮。</p><table><thead><tr><th>客户端</th><th>支持平台</th><th>版本</th><th>简介</th></tr></thead><tbody><tr><td>Clash Verge Rev</td><td>Windows &#x2F; macOS &#x2F; Linux</td><td>v2.5.7</td><td>现代化的 Clash 客户端，界面美观，功能强大</td></tr><tr><td>Clash-Party</td><td>Windows &#x2F; macOS &#x2F; Linux</td><td>v2.0.3</td><td>基于 Electron 的 Mihomo 图形客户端</td></tr><tr><td>v2rayN</td><td>Windows &#x2F; Linux</td><td>7.25.4</td><td>Windows 平台最流行的 V2Ray&#x2F;Xray 客户端</td></tr><tr><td>Hiddify</td><td>全平台</td><td>v4.1.1</td><td>新一代通用客户端，支持 Sing-box 核心</td></tr><tr><td>ClashMI</td><td>全平台</td><td>v1.0.30.1605</td><td>基于 Mihomo 内核的多平台客户端</td></tr><tr><td>Karing</td><td>全平台</td><td>v1.2.25.2802</td><td>兼容 Clash &#x2F; V2ray &#x2F; Sing-box 的全平台客户端</td></tr><tr><td>FlClash</td><td>Windows &#x2F; Linux &#x2F; Android</td><td>v0.8.99</td><td>基于 Flutter 开发的多平台 Clash 客户端</td></tr><tr><td>FlyClash</td><td>Windows &#x2F; Android</td><td>v0.2.9</td><td>基于 ClashMeta 内核的轻量级客户端</td></tr><tr><td>NekoBox</td><td>Android &#x2F; Windows</td><td>1.4.2</td><td>支持 Sing-box 与 Xray 核心的全能客户端</td></tr><tr><td>v2rayNG</td><td>Android</td><td>2.2.6</td><td>Android 平台上最流行的通用代理工具</td></tr><tr><td>Shadowrocket</td><td>iOS</td><td>App Store 版</td><td>需使用非中国区 Apple ID 下载</td></tr><tr><td>Stash</td><td>iOS &#x2F; macOS</td><td>App Store 版</td><td>基于规则的代理工具，支持多种协议</td></tr><tr><td>Loon</td><td>iOS &#x2F; macOS</td><td>App Store 版</td><td>界面简洁优雅，支持插件扩展</td></tr><tr><td>Surge</td><td>iOS &#x2F; macOS</td><td>App Store 版</td><td>拥有强大性能与丰富功能的高级网络工具</td></tr><tr><td>Quantumult X</td><td>iOS</td><td>App Store 版</td><td>界面精美，支持脚本</td></tr><tr><td>Egern</td><td>iOS</td><td>App Store 版</td><td>可通过订阅链接快速导入配置</td></tr><tr><td>ClashBox</td><td>HarmonyOS</td><td>1.7.4</td><td>HarmonyOS NEXT 平台的原生 Clash 客户端</td></tr></tbody></table><h2 id="四、怎么登机：三步走"><a href="#四、怎么登机：三步走" class="headerlink" title="四、怎么登机：三步走"></a>四、怎么登机：三步走</h2><ol><li><strong>打开航站楼</strong>：访问 <a href="https://dm.261024.xyz/explore">https://dm.261024.xyz/explore</a>，等「精选订阅」列表加载出来。</li><li><strong>领登机牌</strong>：在列表里挑选需要的航线，复制它提供的订阅链接（部分入口需要登录后才会显示）。</li><li><strong>登机出发</strong>：把订阅链接粘贴进上表任意一个客户端，更新订阅即可开始使用，之后的节点变更会自动同步。</li></ol><p>如果只是想确认机场的运营状态、或者给新设备装客户端，这一页也够用；想看各个节点的实时负载，可以顺手移步到<a href="https://us.261024.xyz/">节点观测站</a>。</p><h2 id="五、页脚信息"><a href="#五、页脚信息" class="headerlink" title="五、页脚信息"></a>五、页脚信息</h2><p>页面最底部是版权信息：<strong>Copyright © 2026 MiSUB. All Rights Reserved.</strong>，右侧标注版本号 v2.7.0，正好和面板自身的版本对得上。</p><hr><p><strong>相关链接</strong></p><ul><li>汇聚订阅站：<a href="https://dm.261024.xyz/explore">https://dm.261024.xyz/explore</a></li><li>节点观测站：<a href="https://us.261024.xyz/">https://us.261024.xyz</a></li><li>原神官方网站：<a href="https://genshin.hoyoverse.com/">https://genshin.hoyoverse.com/</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 提瓦特国际机场 </category>
+          
+          <category> 汇聚订阅 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 提瓦特国际机场 </tag>
+            
+            <tag> MiSub </tag>
+            
+            <tag> 订阅聚合 </tag>
+            
+            <tag> 机场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>旅行者，欢迎来到 ✈️「提瓦特国际机场」✈️</title>
       <link href="/posts/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E8%88%AA/"/>
       <url>/posts/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%90%AF%E8%88%AA/</url>
       
-        <content type="html"><![CDATA[<p>欢迎来到<strong>提瓦特手记</strong>！这里记录旅行者在七国之间的见闻、角色培养思路和冒险日常。</p><h2 id="旅程起点"><a href="#旅程起点" class="headerlink" title="旅程起点"></a>旅程起点</h2><p>从蒙德的风起地到璃月的群玉阁，每一次启程都是一段新的故事。这个小站会收藏地图解谜、配队灵感和旅途中的只言片语。</p><h2 id="这里会写什么"><a href="#这里会写什么" class="headerlink" title="这里会写什么"></a>这里会写什么</h2><ul><li>角色培养与阵容搭配</li><li>地图探索、任务与解谜</li><li>版本更新和活动记录</li><li>提瓦特大陆的旅行随笔</li></ul><blockquote><p>愿风指引你的道路。</p></blockquote><p>愿每一位来到这里的旅行者，都能找到属于自己的星途。</p>]]></content>
+        <content type="html"><![CDATA[<p>欢迎来到**✈️「提瓦特国际机场」✈️**！这里记录旅行者在七国之间的见闻、航班动态与旅行日常。</p><h2 id="旅程起点"><a href="#旅程起点" class="headerlink" title="旅程起点"></a>旅程起点</h2><p>从蒙德的风起地到璃月的群玉阁，每一次启程都是一段新的故事。这个小站会收藏地图解谜、配队灵感和旅途中的只言片语。</p><h2 id="这里会写什么"><a href="#这里会写什么" class="headerlink" title="这里会写什么"></a>这里会写什么</h2><ul><li>角色培养与阵容搭配</li><li>地图探索、任务与解谜</li><li>版本更新和活动记录</li><li>提瓦特国际机场的航班随笔</li></ul><blockquote><p>愿风指引你的道路。</p></blockquote><p>愿每一位来到这里的旅行者，都能找到属于自己的星途。</p>]]></content>
       
       
       <categories>
           
           <category> 原神 </category>
           
-          <category> 提瓦特 </category>
+          <category> 提瓦特国际机场 </category>
           
           <category> 旅行日志 </category>
           
@@ -24,9 +90,9 @@
       
         <tags>
             
-            <tag> 原神 </tag>
+            <tag> 提瓦特国际机场 </tag>
             
-            <tag> 提瓦特 </tag>
+            <tag> 原神 </tag>
             
             <tag> 冒险日记 </tag>
             
