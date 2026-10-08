@@ -1,2 +1,6 @@
 #tag
   .category-lists#tag-page-tags!= tags_page_list("categories")
+
+#tag-all
+  .tag-cloud-list.is-center
+    != tags_page_list("tags")

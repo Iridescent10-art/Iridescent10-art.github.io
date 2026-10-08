@@ -7,6 +7,8 @@
 
 - var isSubtitle = config.subtitle ? ' - ' + config.subtitle : ''
 - var tabTitle = is_home() || !pageTitle ? config.title + isSubtitle : pageTitle + ' | ' + config.title
+- if (theme.tab_title && is_home() && theme.tab_title.home) tabTitle = theme.tab_title.home
+- if (theme.tab_title && is_category() && theme.tab_title.category) tabTitle = theme.tab_title.category
 
 - var pageKeywords
 - if (page.keywords) pageKeywords = Array.isArray(page.keywords) ? (page.keywords).join(',') :  ([]).join(',') || page.keywords
