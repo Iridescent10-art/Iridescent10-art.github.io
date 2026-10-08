@@ -10,9 +10,18 @@ tab_title:
 # 首页大标题（不填则使用站点标题）
 home_hero_title: 欢迎来到提瓦特
 
+# 分类页 / 分类入口的显示顺序（未列出的分类排在后面）
+category_order:
+  - 原神
+  - 提瓦特国际机场
+  - 旅行日志
+  - 小游戏
+  - 航行日志
+
 menu:
    开始冒险:
      虚空终端: /archives/ || anzhiyu-icon-tags
+     小游戏: /categories/小游戏/ || anzhiyu-icon-dice-d20
 
   # 友链:
   #   友人帐: /link/ || anzhiyu-icon-link
@@ -1253,7 +1262,7 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - "<style>#page-header.full_page{background-image:url('https://t.alcy.cc/ysz')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.full_page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#site-info,#scroll-down{z-index:2}@media(max-width:768px){#page-header.full_page{background-image:url('https://t.alcy.cc/ysmp')!important}}#random-banner .banners-title{top:50%;transform:translateY(-50%);width:calc(100% - 6rem)}#random-banner .banners-title-big{font-size:28px;line-height:1.4;margin-bottom:6px}#random-banner .banners-title-small{margin-top:10px}</style>"
+    - "<style>#page-header.full_page{background-image:url('https://t.alcy.cc/ysz')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.full_page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#site-info,#scroll-down{z-index:2}@media(max-width:768px){#page-header.full_page{background-image:url('https://t.alcy.cc/ysmp')!important}}#random-banner .banners-title{top:50%;transform:translateY(-50%);width:calc(100% - 6rem)}#random-banner .banners-title-big{font-size:28px;line-height:1.4;margin-bottom:6px}#random-banner .banners-title-small{margin-top:10px}#page-header.not-home-page{background-image:url('https://t.alcy.cc/ys')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.not-home-page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#page-header.not-home-page #page-site-info{position:relative;z-index:2}</style>"
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 

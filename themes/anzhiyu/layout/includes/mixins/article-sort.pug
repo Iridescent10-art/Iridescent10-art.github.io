@@ -2,7 +2,8 @@ mixin articleSort(posts, current)
   .article-sort
     - var year
     - let modifiedUrl
-    - posts.each(function (article, post_index) {
+    - const sortedPosts = (posts.toArray ? posts.toArray() : Array.from(posts)).slice().sort(function (a, b) { const topA = Number(a.top) || 0; const topB = Number(b.top) || 0; if (topA !== topB) return topB - topA; return b.date - a.date; })
+    - sortedPosts.forEach(function (article, post_index) {
       - let tempYear = date(article.date, 'YYYY')
       - let no_cover = article.cover === false || !theme.cover.archives_enable ? 'no-article-cover' : ''
       - let title = article.title || _p('no_title')
