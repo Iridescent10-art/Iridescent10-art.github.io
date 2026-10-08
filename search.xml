@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>DLSS 超分显示开关 —— 一键确认游戏到底开没开 DLSS</title>
+      <link href="/posts/DLSS%E8%B6%85%E5%88%86%E6%98%BE%E7%A4%BA%E5%BC%80%E5%85%B3/"/>
+      <url>/posts/DLSS%E8%B6%85%E5%88%86%E6%98%BE%E7%A4%BA%E5%BC%80%E5%85%B3/</url>
+      
+        <content type="html"><![CDATA[<p>在游戏里把画质设置翻了一遍、确认 DLSS 是「开启」状态，可画面到底有没有真的走超分？分辨率缩放比例是多少？——NVIDIA 其实内置了一个<strong>超分状态指示器</strong>，会在画面角落直接标出当前的 DLSS 状态文字，问题是它默认关闭，而且只能改注册表。</p><p><strong>DLSS 超分显示开关</strong>就是把这个改注册表的动作做成一个按钮的 Windows 小工具。</p><p>项目地址：<strong><a href="https://github.com/Iridescent10-art/dlss-display-switch">https://github.com/Iridescent10-art/dlss-display-switch</a></strong></p><p><img src="/img/dlss-repo.png" alt="DLSS 超分显示开关 项目主页" title="仓库首页：C# WinForms 小工具，含源码、注册表脚本与可直接运行的 exe"></p><h2 id="为什么要用它"><a href="#为什么要用它" class="headerlink" title="为什么要用它"></a>为什么要用它</h2><p>想开这个指示器，得手动往注册表里加键值：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKLM\SOFTWARE\NVIDIA Corporation\Global\NGXCore\ShowDlssIndicator</span><br></pre></td></tr></table></figure><p>手动操作的麻烦在于：要管理员权限、要新建键值、开和关还得来回导入两个 <code>.reg</code> 文件，用完想关掉又是一轮操作。这个工具把这些步骤收成了两个按钮。</p><h2 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h2><ol><li>下载 <code>release/DLSS超分显示开关.exe</code></li><li><strong>右键 → 以管理员身份运行</strong>（写 HKLM 必须提权）</li><li>点「打开超分显示」或「关闭超分显示」</li><li>如果游戏正在运行，<strong>重启游戏</strong>后生效</li></ol><p>程序界面上会直接显示当前处于哪种状态，不用自己去注册表编辑器里翻。</p><h2 id="它是怎么实现的"><a href="#它是怎么实现的" class="headerlink" title="它是怎么实现的"></a>它是怎么实现的</h2><table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody><tr><td>技术栈</td><td>C# WinForms（单文件 exe 约 38 KB）</td></tr><tr><td>写入位置</td><td><code>HKLM\SOFTWARE\NVIDIA Corporation\Global\NGXCore\ShowDlssIndicator</code></td></tr><tr><td>权限</td><td>需要管理员身份运行</td></tr><tr><td>生效时机</td><td>游戏重新启动后</td></tr></tbody></table><p>项目结构很清爽：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src/Program.cs                    C# WinForms 源代码</span><br><span class="line">src/app.ico / app.manifest        图标与清单（声明管理员权限）</span><br><span class="line">src/make_icon.py                  生成图标的脚本</span><br><span class="line">release/DLSS超分显示开关.exe       可直接运行的程序</span><br><span class="line">reg/打开超分显示.reg               原始注册表脚本（不想用 exe 可以直接导）</span><br><span class="line">reg/关闭超分显示.reg</span><br></pre></td></tr></table></figure><p>也就是说，你既可以拿现成的 exe 用，也可以直接导入仓库里那两个 <code>.reg</code> 文件，甚至编译源码自己改界面。</p><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul><li>仓库里的 <code>release/</code> 目录：<a href="https://github.com/Iridescent10-art/dlss-display-switch/tree/main/release">https://github.com/Iridescent10-art/dlss-display-switch/tree/main/release</a></li><li>或者在 Releases 页面下载 <code>v1.0.0</code> 的附件：<a href="https://github.com/Iridescent10-art/dlss-display-switch/releases">https://github.com/Iridescent10-art/dlss-display-switch/releases</a></li></ul><h2 id="几点说明"><a href="#几点说明" class="headerlink" title="几点说明"></a>几点说明</h2><ul><li>它<strong>只是显示开关</strong>，不会改动 DLSS 的画质档位、超分比例或帧生成设置；开或关都不会影响帧数，指示器本身只是叠加在画面角落的一行状态文字。</li><li>如果你在游戏里看到的指示文字与设置不符（比如设了质量档却显示其它档位），那说明游戏的配置文件覆盖了设置，可以借这个指示器快速定位问题。</li><li>部分竞技类游戏对第三方叠加层比较敏感，联机前建议关掉指示器，避免被反作弊误判。</li></ul><blockquote><p>一个几十 KB 的小工具，解决的是”我到底开没开 DLSS”这个每天都在纠结的问题。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 旅行日志 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NVIDIA </tag>
+            
+            <tag> DLSS </tag>
+            
+            <tag> Windows工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JXR HDR 转换器 —— 把 Windows HDR 截图变成能分享的 Ultra HDR</title>
       <link href="/posts/JXR%E8%BD%ACUltraHDR%E5%B7%A5%E5%85%B7/"/>
       <url>/posts/JXR%E8%BD%ACUltraHDR%E5%B7%A5%E5%85%B7/</url>
