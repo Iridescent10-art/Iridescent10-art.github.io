@@ -1,0 +1,15 @@
+//本地预览
+hexo cl; hexo s
+
+//推送更新上线
+hexo cl; hexo g; hexo d
+
+#新建博文命令
+hexo new 这是一篇新的博文
+
+#新建标签页命令
+hexo new page 新建的标签页
+
+hexo clean   # 清除缓存和已生成的静态文件
+hexo g       # 重新生成静态文件
+hexo d       # 部署到远程仓库（GitHub Pages等）
