@@ -4,8 +4,7 @@ date: 2026-10-09 13:00:00
 tags:
   - 动漫
 categories:
-  - [旅行日志]
-  - [航行日志]
+  - 旅行日志
 cover: https://raw.githubusercontent.com/Predidit/Kazumi/main/static/screenshot/img_1.png
 top_img: https://t.alcy.cc/ysz
 ---

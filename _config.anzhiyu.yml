@@ -16,7 +16,6 @@ category_order:
   - 提瓦特国际机场
   - 旅行日志
   - 小游戏
-  - 航行日志
 
 menu:
    开始冒险:
@@ -1263,13 +1262,13 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - "<style>#page-header.full_page{background-image:url('https://t.alcy.cc/ysz')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.full_page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#site-info,#scroll-down{z-index:2}@media(max-width:768px){#page-header.full_page{background-image:url('https://t.alcy.cc/ysmp')!important}}#random-banner .banners-title{top:50%;transform:translateY(-50%);width:calc(100% - 6rem)}#random-banner .banners-title-big{font-size:28px;line-height:1.4;margin-bottom:6px}#random-banner .banners-title-small{margin-top:10px}#page-header.not-home-page{background-image:url('https://t.alcy.cc/ys')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.not-home-page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#page-header.not-home-page #page-site-info{position:relative;z-index:2}</style>"
+    - "<style>#page-header.full_page{background-image:url('https://t.alcy.cc/ysz')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.full_page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#site-info,#scroll-down{z-index:2}@media(max-width:768px){#page-header.full_page{background-image:url('https://t.alcy.cc/ysmp')!important}}#random-banner .banners-title{top:50%;transform:translateY(-50%);width:calc(100% - 6rem)}#random-banner .banners-title-big{font-size:28px;line-height:1.4;margin-bottom:6px}#random-banner .banners-title-small{margin-top:10px}#page-header.not-home-page{background-image:url('https://t.alcy.cc/ys')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.not-home-page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#page-header.not-home-page #page-site-info{position:relative;z-index:2}@media screen and (max-width:1200px){body:not(:has(#console.show)) #nav-music{display:flex!important;position:fixed!important;left:14px!important;bottom:14px!important;top:auto!important;width:auto!important;height:auto!important;z-index:9!important;align-items:center!important}body:not(:has(#console.show)) #nav-music .aplayer{height:41px!important;width:auto!important;padding:0!important;margin:0!important;border-radius:60px!important;background:var(--card-bg)!important;border:var(--style-border)!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-body{flex-direction:row!important;align-items:center!important;width:100%!important}body:not(:has(#console.show)) #nav-music .aplayer.aplayer-withlrc .aplayer-pic{height:25px!important;width:25px!important;margin:8px 0 0 8px!important;border-radius:40px!important}body:not(:has(#console.show)) #nav-music .aplayer.aplayer-withlrc .aplayer-info{height:100%!important;width:auto!important;flex-direction:row!important;margin:0!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-info .aplayer-music{position:static!important;height:100%!important;margin:0!important;padding:0 12px 0 8px!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-info .aplayer-music .aplayer-title{max-width:110px!important;font-size:12px!important;line-height:1!important;color:var(--anzhiyu-fontcolor)!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-info .aplayer-controller{position:absolute!important;width:100%!important;height:100%!important;top:0!important}}</style>"
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 
   bottom:
-    # 自定义js
-    # - <script src="/js/xxx"></script>
+    # 背景音乐：首次点击/触屏/按键时自动开始播放（浏览器禁止声音自动播放，必须等一次用户交互）
+    - "<script>(function(){var armed=true;function tryPlay(){if(!armed)return;var mt=document.querySelector('#nav-music meting-js');if(!mt||!mt.aplayer)return;if(!document.querySelector('#nav-music .aplayer-music')||!document.querySelector('#nav-music .aplayer-button'))return;if(typeof anzhiyu_musicPlaying!=='undefined'&&anzhiyu_musicPlaying){armed=false;return}try{anzhiyu.musicToggle();armed=false}catch(e){}}['click','touchstart','keydown'].forEach(function(ev){window.addEventListener(ev,tryPlay,{passive:true})})})();</script>"
 
 # CDN
 # Don't modify the following settings unless you know how they work
