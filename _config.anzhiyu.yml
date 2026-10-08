@@ -1,8 +1,13 @@
+# 顶栏左上角的品牌文字（不填则使用站点标题）
+nav_brand:
+  text: 主页
+
+# 首页大标题（不填则使用站点标题）
+home_hero_title: 欢迎来到提瓦特
+
 menu:
-   冒险:
-     足迹: /archives/ || anzhiyu-icon-box-archive
-     图鉴: /categories/ || anzhiyu-icon-shapes
-     虚空终端: /tags/ || anzhiyu-icon-tags
+   开始冒险:
+     虚空终端: /archives/ || anzhiyu-icon-tags
 
   # 友链:
   #   友人帐: /link/ || anzhiyu-icon-link
@@ -1047,22 +1052,8 @@ home_top:
   title: ✈️「提瓦特国际机场」✈️
   subTitle: 旅行者，欢迎来到 ✈️「提瓦特国际机场」✈️，七国航线任你起降。
   siteText: 提瓦特国际机场 · 航班日志
-  category:
-    - name: 原神
-      path: /categories/原神/
-      shadow: var(--anzhiyu-shadow-blue)
-      class: blue
-      icon: anzhiyu-icon-dove
-    - name: 提瓦特国际机场
-      path: /categories/提瓦特国际机场/
-      shadow: var(--anzhiyu-shadow-red)
-      class: red
-      icon: anzhiyu-icon-fire
-    - name: 旅行日志
-      path: /categories/旅行日志/
-      shadow: var(--anzhiyu-shadow-green)
-      class: green
-      icon: anzhiyu-icon-book
+  # 分类快捷入口：文章分类暂时全部取消，这里先留空；确定分类后再补
+  category: []
   default_descr: 在七国之间旅行，记录风与岩的故事。
   swiper:
     enable: false

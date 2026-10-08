@@ -44,7 +44,7 @@ header#page-header(class=`${isHomeClass}` style=home_index_img_bg)
 
     else if is_home() 
       #site-info
-        h1#site-title=site_title
+        h1#site-title= theme.home_hero_title ? theme.home_hero_title : site_title
         if theme.subtitle.enable
           - var loadSubJs = true
           #site-subtitle
