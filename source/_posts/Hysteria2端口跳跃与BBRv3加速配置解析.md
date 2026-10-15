@@ -9,14 +9,16 @@ tags:
   - Linux运维
 categories:
   - 提瓦特国际机场
-cover: https://t.alcy.cc/ysz
-top_img: https://t.alcy.cc/ysz
+cover: /img/hy2-bbr.jpg
+top_img: /img/hy2-bbr.jpg
 ---
 
 在使用 VPS 搭建或优化 **Hysteria 2（Hy2）** 节点时，很多旅客会遇到两个关键的性能与稳定性瓶颈：
 
 1. **UDP QoS 丢包限速**：部分运营商对长时间、单端口的高吞吐 UDP 流量极其敏感，容易进行阶段性限速甚至阻断；
 2. **高延迟与跨国链路抖动**：长距离越洋链路丢包率高，传统拥塞控制算法会导致传输速率急剧断崖。
+
+![Hysteria 2 端口跳跃与 BBRv3 加速拓扑概念图](/img/hy2-bbr.jpg "Hysteria 2 端口跳跃与 BBRv3 加速：高速数据流多端口分发与低延迟拥塞控制")
 
 为了解决这两个问题，网络上广泛流传着两条经典的核心运维指令：**iptables 端口跳跃（Port Hopping）** 与 **BBR v3 一键换核加速**。本文将逐行拆解这两条指令的运作机制、底层原理以及客户端协同配置方法。
 
