@@ -1,3 +1,3 @@
-var posts=["posts/我的博客正式启航/","posts/Hysteria2端口跳跃与BBRv3加速配置解析/","posts/5217社区-单机游戏分享站/","posts/DLSS超分显示开关/","posts/JXR转UltraHDR工具/","posts/代理软件使用教程/","posts/Kazumi-番剧采集播放器/","posts/卫戍协议-盟约/","posts/提瓦特国际机场-节点观测站/","posts/提瓦特国际机场-汇聚订阅站/"];function toRandomPost(){
+var posts=["posts/DM-Toolbox-一站式综合游戏优化与硬件工具箱/","posts/我的博客正式启航/","posts/Hysteria2端口跳跃与BBRv3加速配置解析/","posts/5217社区-单机游戏分享站/","posts/DLSS超分显示开关/","posts/JXR转UltraHDR工具/","posts/代理软件使用教程/","posts/Kazumi-番剧采集播放器/","posts/卫戍协议-盟约/","posts/提瓦特国际机场-节点观测站/","posts/提瓦特国际机场-汇聚订阅站/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
