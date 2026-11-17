@@ -1,0 +1,428 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器 | ✈️「提瓦特国际机场」✈️</title><meta name="keywords" content="燕云十六声,游戏机制,伤害计算器,词条收益,数据分析"><meta name="author" content="旅行者"><meta name="copyright" content="旅行者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#F7F3E8"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器"><meta name="application-name" content="《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#F7F3E8"><meta property="og:type" content="article"><meta property="og:title" content="《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器"><meta property="og:url" content="https://iridescent10-art.github.io/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/index.html"><meta property="og:site_name" content="✈️「提瓦特国际机场」✈️"><meta property="og:description" content="在《燕云十六声》（Where Winds Meet）中，装备词条调律、定音选择（外穿 vs 属穿）、以及会心与会意流派的收益权衡，一直是广大少侠配装的核心痛点。 本研究基于多武器全量控制变量实测木桩数据（覆盖斩雪刀法、唐刀、通用长枪、决狱悬峰枪、陌刀、扇武学、手甲及无名剑法八大武学体系，共 50 组"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://iridescent10-art.github.io/img/yysls-calc-cover.png"><meta property="article:author" content="旅行者"><meta property="article:tag" content="原神, 提瓦特国际机场, 机场, 旅行者, Genshin Impact, 博客"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://iridescent10-art.github.io/img/yysls-calc-cover.png"><meta name="description" content="在《燕云十六声》（Where Winds Meet）中，装备词条调律、定音选择（外穿 vs 属穿）、以及会心与会意流派的收益权衡，一直是广大少侠配装的核心痛点。 本研究基于多武器全量控制变量实测木桩数据（覆盖斩雪刀法、唐刀、通用长枪、决狱悬峰枪、陌刀、扇武学、手甲及无名剑法八大武学体系，共 50 组"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://iridescent10-art.github.io/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"派蒙","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"旅行者，别急着离开 ✈️「提瓦特国际机场」✈️！","backTitle":"欢迎回来，旅行者！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 旅行者","link":"链接: ","source":"来源: ✈️「提瓦特国际机场」✈️","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '✈️「提瓦特国际机场」✈️',
+  title: '《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器',
+  postAI: '本文基于《燕云十六声》多武器全量控制变量实测反推，确立了游戏武学伤害的底层精确计算架构、串联互斥四色判定链、首领动态防御常数（D外=250）及双穿透2:1折线拐点机制。系统对比了常规会心流、会心小外倒挂、均衡会意与纯会意7000大外四大配装路线的攻属词条与定音期望收益，并开源了全自动Excel交互计算器与全量50组验算数据集。',
+  pageFillDescription: '🎯 核心结论速览, 🧮 单次确定状态武学伤害总公式, 乘区关键参数拆解：, 📊 四大配装工况调律决策一览, 🖥️ 交互计算器体验指南在燕云十六声中装备词条调律定音选择外穿属穿以及会心与会意流派的收益权衡一直是广大少侠配装的核心痛点本研究基于多武器全量控制变量实测木桩数据覆盖斩雪刀法唐刀通用长枪决狱悬峰枪陌刀扇武学手甲及无名剑法八大武学体系共组独立工况行验算数据反推校准完整揭示了游戏的伤害底层计算公式四色互斥判定链与双穿透双段折线拐点机制同时我们正式开源了全套研究报告与全自动交互计算器开源仓库配套计算器下载直接下载燕云十六声全自动武学伤害与词条收益计算器完整报告页高清查看核心结论速览四条外穿定音外穿为全流派不可动摇铁律首领外抗以为拐点分母负穿惩罚分母正穿增益卸下条外穿定音会导致面板外穿跌至严重跌破拐点三大流派总期望瞬间暴跌替换任何一条外穿定音为属穿定音均稳定净亏大外攻全面压制大本属在满武库属伤与属穿下大外攻反超大本属的临界外穿仅需当前毕业外穿远超临界线大外攻收益稳定领先大本属纯会意大外期望反超常规会心流当装备完全舍弃精准和会心词条将省下的词条拉满大外攻至时凭借实战会意伤害与会意率总期望正式反超毕业级常规会心流会心流小外大外倒挂创全流派期望峰值当面板生效小外大于大外时触发底层最小大于最大直接取最小机制四色跳字全部锁定结算满值小外攻收益飙升倍点登顶常规第一串联互斥判定链严格按橙字会意灰字擦伤未精准黄字会心白字普伤顺序判定常规面板上限为会心会意心法奇术提供的直接双暴可无视上限额外叠加单次确定状态武学伤害总公式外外外外防外外本属属属属本属特外属外双暴增乘区关键参数拆解动态外防承伤率外防外外目标首领外防常数外点外攻穿透乘区外拐点低于时外外高于时外外本系属攻穿透乘区本属拐点低于时本属属高于时本属属外系属攻不吃本系属伤与属穿按外攻倍率外与专属固定裸抗系数独立结算全局增伤增涵盖全武学指定武学首领增伤及四件套同武器气血增伤等四大配装工况调律决策一览配装路线工况核心面板与三率特征单次总期望定音铁律三率补齐后常规词条优先级溢出避坑警示会心流派常规面板外攻精准会心实战会心伤点条外穿定音会心前敏大外攻劲大本属面板会心满后敏跌至转堆大外与劲避坑大外属会心流派小外大外倒挂外攻触发最小最大固定伤害黄字反超橙字点全流派最高条外穿定音小外攻未超标敏超标敏大本属大外攻与劲大幅失效未超标势负收益均衡会意要精准会心外攻精准会意实战会意伤点条外穿定音会意前势大外攻劲大本属面板会意满后势跌至立刻转堆大外攻与劲纯会意流派大外极限外攻放弃精准会心堆满大外会意点常规形态榜首条外穿定音会意前无脑堆势满后大外攻劲大本属会意触顶后停堆势绝对避坑敏交互计算器体验指南计算器包含四大独立计算分表与实时联动的四流派动态横向总览自动联动重算在任意分表修改左侧浅黄色单元格基础攻击判定属性技能倍率全表公式将自动重算四色跳字期望全词条收益排行穿透定音增量及平衡临界线多维柱状图直观呈现内嵌张动态图表直观对比各词条单次跳字与期望收益贡献欢迎前往下载体验',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-11-17 18:04:11',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#17191F')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#F7F3E8')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><style>#page-header.full_page{background-image:url('https://t.alcy.cc/ysz')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.full_page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#site-info,#scroll-down{z-index:2}@media(max-width:768px){#page-header.full_page{background-image:url('https://t.alcy.cc/ysmp')!important}}#random-banner .banners-title{top:50%;transform:translateY(-50%);width:calc(100% - 6rem)}#random-banner .banners-title-big{font-size:28px;line-height:1.4;margin-bottom:6px}#random-banner .banners-title-small{margin-top:10px}#page-header.not-home-page{background-image:url('https://t.alcy.cc/ys')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}#page-header.not-home-page::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,15,28,.16),rgba(8,15,28,.58));pointer-events:none}#page-header.not-home-page #page-site-info{position:relative;z-index:2}@media screen and (max-width:1200px){body:not(:has(#console.show)) #nav-music{display:flex!important;position:fixed!important;left:14px!important;bottom:14px!important;top:auto!important;width:auto!important;height:auto!important;z-index:9!important;align-items:center!important}body:not(:has(#console.show)) #nav-music .aplayer{height:41px!important;width:auto!important;padding:0!important;margin:0!important;border-radius:60px!important;background:var(--card-bg)!important;border:var(--style-border)!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-body{flex-direction:row!important;align-items:center!important;width:100%!important}body:not(:has(#console.show)) #nav-music .aplayer.aplayer-withlrc .aplayer-pic{height:25px!important;width:25px!important;margin:0 0 0 8px!important;align-self:center!important;border-radius:40px!important}body:not(:has(#console.show)) #nav-music .aplayer.aplayer-withlrc .aplayer-info{height:100%!important;width:auto!important;flex-direction:row!important;margin:0!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-info .aplayer-music{position:static!important;height:100%!important;margin:0!important;padding:0 12px 0 8px!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-info .aplayer-music .aplayer-title{max-width:110px!important;font-size:12px!important;line-height:1!important;color:var(--anzhiyu-fontcolor)!important}body:not(:has(#console.show)) #nav-music .aplayer .aplayer-info .aplayer-controller{position:absolute!important;width:100%!important;height:100%!important;top:0!important}}</style><meta name="generator" content="Hexo 8.1.2"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://t.alcy.cc/ys"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">主页</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 开始冒险</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 虚空终端</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/%E5%B0%8F%E6%B8%B8%E6%88%8F/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 小游戏</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/BBRv3/" style="font-size: 1.05rem;">BBRv3<sup>1</sup></a><a href="/tags/Clash/" style="font-size: 1.05rem;">Clash<sup>1</sup></a><a href="/tags/DLSS/" style="font-size: 1.05rem;">DLSS<sup>2</sup></a><a href="/tags/HDR/" style="font-size: 1.05rem;">HDR<sup>2</sup></a><a href="/tags/Hysteria2/" style="font-size: 1.05rem;">Hysteria2<sup>1</sup></a><a href="/tags/Linux%E8%BF%90%E7%BB%B4/" style="font-size: 1.05rem;">Linux运维<sup>1</sup></a><a href="/tags/NVIDIA/" style="font-size: 1.05rem;">NVIDIA<sup>1</sup></a><a href="/tags/Ultra-HDR/" style="font-size: 1.05rem;">Ultra HDR<sup>1</sup></a><a href="/tags/VPS%E4%BC%98%E5%8C%96/" style="font-size: 1.05rem;">VPS优化<sup>1</sup></a><a href="/tags/Windows%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">Windows工具<sup>2</sup></a><a href="/tags/%E4%BB%A3%E7%90%86%E5%AE%A2%E6%88%B7%E7%AB%AF/" style="font-size: 1.05rem;">代理客户端<sup>1</sup></a><a href="/tags/%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E5%99%A8/" style="font-size: 1.05rem;">伤害计算器<sup>1</sup></a><a href="/tags/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" style="font-size: 1.05rem;">使用教程<sup>1</sup></a><a href="/tags/%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99/" style="font-size: 1.05rem;">分流规则<sup>1</sup></a><a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 1.05rem;">动漫<sup>1</sup></a><a href="/tags/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F/" style="font-size: 1.05rem;">单机游戏<sup>1</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/" style="font-size: 1.05rem;">工具推荐<sup>1</sup></a><a href="/tags/%E5%B8%A7%E7%94%9F%E6%88%90/" style="font-size: 1.05rem;">帧生成<sup>1</sup></a><a href="/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/" style="font-size: 1.05rem;">开源软件<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 1.05rem;">数据分析<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E4%BC%98%E5%8C%96/" style="font-size: 1.05rem;">游戏优化<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/" style="font-size: 1.05rem;">游戏机制<sup>1</sup></a><a href="/tags/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0/" style="font-size: 1.05rem;">燕云十六声<sup>1</sup></a><a href="/tags/%E7%AB%AF%E5%8F%A3%E8%B7%B3%E8%B7%83/" style="font-size: 1.05rem;">端口跳跃<sup>1</sup></a><a href="/tags/%E7%BB%BF%E8%89%B2%E5%85%8D%E5%AE%89%E8%A3%85/" style="font-size: 1.05rem;">绿色免安装<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/" style="font-size: 1.05rem;">网站推荐<sup>1</sup></a><a href="/tags/%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A/" style="font-size: 1.05rem;">词条收益<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" style="font-size: 1.05rem;">资源分享<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/11/"><span class="card-archive-list-date">十一月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/10/"><span class="card-archive-list-date">十月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">10</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/06/"><span class="card-archive-list-date">六月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%B8%E6%88%8F%E7%A0%94%E7%A9%B6/" itemprop="url">游戏研究</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>燕云十六声</span></a><a class="article-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>游戏机制</span></a><a class="article-meta__tags" href="/tags/%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E5%99%A8/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>伤害计算器</span></a><a class="article-meta__tags" href="/tags/%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>词条收益</span></a><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>数据分析</span></a></span></div></div><h1 class="post-title" itemprop="name headline">《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-11-17T09:35:00.000Z" title="发表于 2026-11-17 17:35:00">2026-11-17</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-11-17T10:04:11.692Z" title="更新于 2026-11-17 18:04:11">2026-11-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为✈️「提瓦特国际机场」✈️"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>✈️「提瓦特国际机场」✈️</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://t.alcy.cc/ysz"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><div class="post-ai-description"><div class="ai-title"><i class="anzhiyufont anzhiyu-icon-bilibili"></i><div class="ai-title-text">AI-摘要</div><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i><i class="anzhiyufont anzhiyu-icon-circle-dot" title="朗读摘要"></i><div id="ai-tag">派蒙 GPT</div></div><div class="ai-explanation">AI初始化中...</div><div class="ai-btn-box"><div class="ai-btn-item">介绍自己 🙈</div><div class="ai-btn-item">生成本文简介 👋</div><div class="ai-btn-item">推荐相关文章 📖</div><div class="ai-btn-item">前往主页 🏠</div><div class="ai-btn-item" id="go-tianli-blog">前往爱发电购买</div></div><script data-pjax src="/js/anzhiyu/ai_abstract.js"></script></div><article class="post-content" id="article-container" itemscope itemtype="https://iridescent10-art.github.io/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/"><header><a class="post-meta-categories" href="/categories/%E6%B8%B8%E6%88%8F%E7%A0%94%E7%A9%B6/" itemprop="url">游戏研究</a><a href="/tags/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0/" tabindex="-1" itemprop="url">燕云十六声</a><a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/" tabindex="-1" itemprop="url">游戏机制</a><a href="/tags/%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E5%99%A8/" tabindex="-1" itemprop="url">伤害计算器</a><a href="/tags/%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A/" tabindex="-1" itemprop="url">词条收益</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" tabindex="-1" itemprop="url">数据分析</a><h1 id="CrawlerTitle" itemprop="name headline">《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">旅行者</span><time itemprop="dateCreated datePublished" datetime="2026-11-17T09:35:00.000Z" title="发表于 2026-11-17 17:35:00">2026-11-17</time><time itemprop="dateCreated datePublished" datetime="2026-11-17T10:04:11.692Z" title="更新于 2026-11-17 18:04:11">2026-11-17</time></header><p>在《燕云十六声》（Where Winds Meet）中，装备词条调律、定音选择（外穿 vs 属穿）、以及会心与会意流派的收益权衡，一直是广大少侠配装的核心痛点。</p>
+<p>本研究基于<strong>多武器全量控制变量实测木桩数据</strong>（覆盖斩雪刀法、唐刀、通用长枪、决狱悬峰枪、陌刀、扇武学、手甲及无名剑法八大武学体系，共 50 组独立工况&#x2F;51 行验算数据）反推校准，完整揭示了游戏的伤害底层计算公式、四色互斥判定链与双穿透双段 $2:1$ 折线拐点机制。</p>
+<p>同时，我们正式开源了全套研究报告与全自动 Excel 交互计算器！</p>
+<ul>
+<li><strong>GitHub 开源仓库</strong>：<strong><a target="_blank" rel="noopener" href="https://github.com/Iridescent10-art/Where-Winds-Meet-Damage-Calculator">https://github.com/Iridescent10-art/Where-Winds-Meet-Damage-Calculator</a></strong></li>
+<li><strong>配套 Excel 计算器下载</strong>：<a target="_blank" rel="noopener" href="https://github.com/Iridescent10-art/Where-Winds-Meet-Damage-Calculator/raw/main/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E5%85%A8%E8%87%AA%E5%8A%A8%E6%5B%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8.xlsx">直接下载 <code>燕云十六声全自动武学伤害与词条收益计算器.xlsx</code></a></li>
+<li><strong>完整 PDF 报告（23页高清）</strong>：<a target="_blank" rel="noopener" href="https://github.com/Iridescent10-art/Where-Winds-Meet-Damage-Calculator/blob/main/docs/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E5%92%8C%E5%AE%9A%E9%9F%B3%E6%94%B6%E7%9B%8A%E5%AE%8C%E6%95%B4%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A.pdf">查看 PDF</a></li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/img/yysls-report-overview.png" alt="23页研究报告缩略图总览" title="《燕云十六声》武学伤害底层模型分析报告"></p>
+<hr>
+<h2 id="🎯-核心结论速览"><a href="#🎯-核心结论速览" class="headerlink" title="🎯 核心结论速览"></a>🎯 核心结论速览</h2><ol>
+<li><strong>四条外穿定音（56.0 外穿）为全流派不可动摇铁律</strong>：<br>首领外抗以 $25.0$ 为拐点（$&lt;25$ 分母 100 负穿惩罚，$\ge 25$ 分母 200 正穿增益）。卸下 4 条外穿定音会导致面板外穿跌至 $4.8$（严重跌破 25 拐点），三大流派总期望瞬间暴跌 <strong>$12.8% \sim 14.9%$</strong>！替换任何一条外穿定音为属穿定音均稳定净亏 $1.64% \sim 2.08%$。</li>
+<li><strong>大外攻（139.6）全面压制大本属（79.2）</strong>：<br>在 $15%$ 满武库属伤与 $30.0&#x2F;36.0$ 属穿下，大外攻反超大本属的临界外穿仅需 $22.84 \sim 27.20$。当前毕业外穿 $56.0$ 远超临界线，大外攻收益稳定领先大本属 $14% \sim 18%$。</li>
+<li><strong>纯会意 7000 大外（期望 4463.60）反超常规会心流（4456.06）</strong>：<br>当装备完全舍弃精准和会心词条、将省下的词条拉满大外攻至 $7000$ 时，凭借实战 $140.2%$ 会意伤害与 $44.6%$ 会意率，总期望正式反超毕业级常规会心流！</li>
+<li><strong>会心流“小外 &gt; 大外倒挂”（4500-4300）创全流派期望峰值（4506.33）</strong>：<br>当面板生效小外大于大外时，触发底层“最小大于最大直接取最小”机制，四色跳字全部锁定 4500 结算，满值小外攻收益飙升 <strong>$2.16$ 倍（+99.96 点）</strong>，登顶常规第一。</li>
+<li><strong>串联互斥判定链</strong>：<br>严格按 <strong>橙字会意 → 灰字擦伤（未精准） → 黄字会心 → 白字普伤</strong> 顺序判定。常规面板上限为会心 80% &#x2F; 会意 40%，心法&#x2F;奇术提供的直接双暴可无视上限额外叠加。</li>
+</ol>
+<hr>
+<h2 id="🧮-单次确定状态武学伤害总公式"><a href="#🧮-单次确定状态武学伤害总公式" class="headerlink" title="🧮 单次确定状态武学伤害总公式"></a>🧮 单次确定状态武学伤害总公式</h2><p>$$D &#x3D; \left{ \left[ (A_{\text{外}} \times C_{\text{外}} + F_{\text{外}}) \times f_{\text{外防}} \times (1 + g_{\text{外}}) \times M_{\text{外}} + (A_{\text{本属}} \times C_{\text{属}} + F_{\text{属}}) \times (1 + g_{\text{属}}) \times M_{\text{本属}} \right] \times M_{\text{特}} + A_{\text{外属}} \times C_{\text{外}} \times 0.680 \right} \times M_{\text{双暴}} \times (1 + G_{\text{增}})$$</p>
+<h3 id="乘区关键参数拆解："><a href="#乘区关键参数拆解：" class="headerlink" title="乘区关键参数拆解："></a>乘区关键参数拆解：</h3><ul>
+<li><strong>动态外防承伤率</strong>：$f_{\text{外防}} &#x3D; A_{\text{外}} &#x2F; (A_{\text{外}} + 250)$，目标首领外防常数 $D_{\text{外}} &#x3D; 250$ 点。</li>
+<li><strong>外攻穿透乘区 $M_{\text{外}}$</strong>：拐点 $25.0$。低于 25 时 $M_{\text{外}} &#x3D; 1 + (P_{\text{外}} - 25)&#x2F;100$；高于 25 时 $M_{\text{外}} &#x3D; 1 + (P_{\text{外}} - 25)&#x2F;200$。</li>
+<li><strong>本系属攻穿透乘区 $M_{\text{本属}}$</strong>：拐点 $30.0$。低于 30 时 $M_{\text{本属}} &#x3D; 1 + (P_{\text{属}} - 30)&#x2F;90$；高于 30 时 $M_{\text{本属}} &#x3D; 1 + (P_{\text{属}} - 30)&#x2F;180$。</li>
+<li><strong>外系属攻</strong>：不吃本系属伤与属穿，按外攻倍率 $C_{\text{外}}$ 与专属固定裸抗系数 $0.680$ 独立结算。</li>
+<li><strong>全局增伤 $G_{\text{增}}$</strong>：涵盖全武学、指定武学、首领增伤及四件套同武器 $+10%$ 气血增伤等。</li>
+</ul>
+<hr>
+<h2 id="📊-四大配装工况调律决策一览"><a href="#📊-四大配装工况调律决策一览" class="headerlink" title="📊 四大配装工况调律决策一览"></a>📊 四大配装工况调律决策一览</h2><table>
+<thead>
+<tr>
+<th align="left">配装路线 &#x2F; 工况</th>
+<th align="left">核心面板与三率特征</th>
+<th align="center">单次总期望 $E_0$</th>
+<th align="center">定音铁律</th>
+<th align="left">三率补齐后常规词条优先级</th>
+<th align="left">溢出 &#x2F; 避坑警示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>会心流派<br>（常规面板）</strong></td>
+<td align="left">外攻 3934–4859<br>精准97.5% &#x2F; 会心80%+9.16%<br>实战会心伤 154.0%</td>
+<td align="center"><strong>4456.06 点</strong></td>
+<td align="center">4 条外穿定音</td>
+<td align="left">80%会心前：<strong>敏(+61.08) &gt; 大外攻(+53.59) &gt; 劲(+52.64) &gt; 大本属(+46.90)</strong></td>
+<td align="left">面板会心满80%后敏跌至+26.37，转堆大外与劲；避坑大外属</td>
+</tr>
+<tr>
+<td align="left"><strong>会心流派<br>（小外&gt;大外倒挂）</strong></td>
+<td align="left">外攻 4500–4300<br>触发最小&gt;最大固定伤害<br>黄字反超橙字 +5.18%</td>
+<td align="center"><strong>4506.33 点<br>（全流派最高）</strong></td>
+<td align="center">4 条外穿定音</td>
+<td align="left"><strong>小外攻(+99.96) &gt; 未超标敏(+92.28) &gt; 超标敏(+56.84) &gt; 大本属(+46.90)</strong></td>
+<td align="left">大外攻(+0.00)与劲(+14.21)大幅失效，未超标势(-0.12)负收益</td>
+</tr>
+<tr>
+<td align="left"><strong>均衡会意<br>（要精准会心）</strong></td>
+<td align="left">外攻 1950–6493<br>精准92.4% &#x2F; 会意38%+4.6%<br>实战会意伤 140.2%</td>
+<td align="center"><strong>4420.97 点</strong></td>
+<td align="center">4 条外穿定音</td>
+<td align="left">40%会意前：<strong>势(+67.79) &gt; 大外攻(+62.61) &gt; 劲(+57.30) &gt; 大本属(+53.03)</strong></td>
+<td align="left">面板会意满40%后势跌至+35.60，立刻转堆大外攻与劲</td>
+</tr>
+<tr>
+<td align="left"><strong>纯会意流派<br>（7000大外极限）</strong></td>
+<td align="left">外攻 1950–7000<br>放弃精准会心堆满大外<br>会意 40%+4.6% &#x3D; 44.6%</td>
+<td align="center"><strong>4463.60 点<br>（常规形态榜首）</strong></td>
+<td align="center">4 条外穿定音</td>
+<td align="left">40%会意前无脑堆<strong>势(+74.18)</strong>；满40%后：<strong>大外攻(+60.11) &gt; 劲(+55.02) &gt; 大本属(+50.92)</strong></td>
+<td align="left">会意触顶40%后停堆势(+34.18)；绝对避坑敏(+13.48)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🖥️-交互计算器体验指南"><a href="#🖥️-交互计算器体验指南" class="headerlink" title="🖥️ 交互计算器体验指南"></a>🖥️ 交互计算器体验指南</h2><p>计算器包含四大独立计算分表与实时联动的【四流派动态横向总览】：</p>
+<ol>
+<li><strong>自动联动重算</strong>：在任意分表修改左侧<strong>浅黄色单元格</strong>（基础攻击、判定属性、技能倍率），全表公式将自动重算四色跳字期望、全词条收益排行、穿透定音增量及平衡临界线。</li>
+<li><strong>多维柱状图直观呈现</strong>：内嵌 24 张动态图表，直观对比各词条单次跳字与期望收益贡献。</li>
+<li><strong>欢迎前往 GitHub 下载体验</strong>：<a target="_blank" rel="noopener" href="https://github.com/Iridescent10-art/Where-Winds-Meet-Damage-Calculator">Iridescent10-art&#x2F;Where-Winds-Meet-Damage-Calculator</a></li>
+</ol>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="https://t.alcy.cc/ys" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="https://t.alcy.cc/ys" title="头像" alt="头像"></a><div class="post-copyright__author_name">旅行者</div><div class="post-copyright__author_desc">✈️「提瓦特国际机场」✈️，航班仍在继续。</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://iridescent10-art.github.io/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://iridescent10-art.github.io/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/')">《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://iridescent10-art.github.io/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器&amp;url=https://iridescent10-art.github.io/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/&amp;pic=https://t.alcy.cc/ysz" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://iridescent10-art.github.io" target="_blank">✈️「提瓦特国际机场」✈️</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>燕云十六声<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>游戏机制<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E5%99%A8/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>伤害计算器<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>词条收益<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>数据分析<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="/img/yysls-calc-cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/DM-Toolbox-%E4%B8%80%E7%AB%99%E5%BC%8F%E7%BB%BC%E5%90%88%E6%B8%B8%E6%88%8F%E4%BC%98%E5%8C%96%E4%B8%8E%E7%A1%AC%E4%BB%B6%E5%B7%A5%E5%85%B7%E7%AE%B1/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/img/dm-toolbox-main.png" onerror="onerror=null;src='https://t.alcy.cc/ys'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">DM-Toolbox (DM工具箱) —— 一站式硬件深度定制、游戏多帧生成补丁与画质增强工具箱</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="https://t.alcy.cc/ys" onerror="this.onerror=null;this.src='https://t.alcy.cc/ysz'" alt="avatar"/></div><div class="author-info__description">记录 ✈️「提瓦特国际机场」✈️ 的七国航线、航班动态与旅行者见闻。</div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">愿风指引你的道路，旅行者。</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://t.alcy.cc/ysmp) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://t.alcy.cc/ys) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AF-%E6%A0%B8%E5%BF%83%E7%BB%93%E8%AE%BA%E9%80%9F%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">🎯 核心结论速览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%A7%AE-%E5%8D%95%E6%AC%A1%E7%A1%AE%E5%AE%9A%E7%8A%B6%E6%80%81%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E6%80%BB%E5%85%AC%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">🧮 单次确定状态武学伤害总公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%98%E5%8C%BA%E5%85%B3%E9%94%AE%E5%8F%82%E6%95%B0%E6%8B%86%E8%A7%A3%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">乘区关键参数拆解：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8A-%E5%9B%9B%E5%A4%A7%E9%85%8D%E8%A3%85%E5%B7%A5%E5%86%B5%E8%B0%83%E5%BE%8B%E5%86%B3%E7%AD%96%E4%B8%80%E8%A7%88"><span class="toc-number">3.</span> <span class="toc-text">📊 四大配装工况调律决策一览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%96%A5%EF%B8%8F-%E4%BA%A4%E4%BA%92%E8%AE%A1%E7%AE%97%E5%99%A8%E4%BD%93%E9%AA%8C%E6%8C%87%E5%8D%97"><span class="toc-number">4.</span> <span class="toc-text">🖥️ 交互计算器体验指南</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/" title="《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/img/yysls-calc-cover.png" onerror="this.onerror=null;this.src='https://t.alcy.cc/ys'" alt="《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器"/></a><div class="content"><a class="title" href="/posts/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0%E6%AD%A6%E5%AD%A6%E4%BC%A4%E5%AE%B3%E5%BA%95%E5%B1%82%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8/" title="《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器">《燕云十六声》武学伤害底层模型与词条收益完整分析报告及全自动计算器</a><time datetime="2026-11-17T09:35:00.000Z" title="发表于 2026-11-17 17:35:00">2026-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/DM-Toolbox-%E4%B8%80%E7%AB%99%E5%BC%8F%E7%BB%BC%E5%90%88%E6%B8%B8%E6%88%8F%E4%BC%98%E5%8C%96%E4%B8%8E%E7%A1%AC%E4%BB%B6%E5%B7%A5%E5%85%B7%E7%AE%B1/" title="DM-Toolbox (DM工具箱) —— 一站式硬件深度定制、游戏多帧生成补丁与画质增强工具箱"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/img/dm-toolbox-main.png" onerror="this.onerror=null;this.src='https://t.alcy.cc/ys'" alt="DM-Toolbox (DM工具箱) —— 一站式硬件深度定制、游戏多帧生成补丁与画质增强工具箱"/></a><div class="content"><a class="title" href="/posts/DM-Toolbox-%E4%B8%80%E7%AB%99%E5%BC%8F%E7%BB%BC%E5%90%88%E6%B8%B8%E6%88%8F%E4%BC%98%E5%8C%96%E4%B8%8E%E7%A1%AC%E4%BB%B6%E5%B7%A5%E5%85%B7%E7%AE%B1/" title="DM-Toolbox (DM工具箱) —— 一站式硬件深度定制、游戏多帧生成补丁与画质增强工具箱">DM-Toolbox (DM工具箱) —— 一站式硬件深度定制、游戏多帧生成补丁与画质增强工具箱</a><time datetime="2026-10-19T06:30:00.000Z" title="发表于 2026-10-19 14:30:00">2026-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/Hysteria2%E7%AB%AF%E5%8F%A3%E8%B7%B3%E8%B7%83%E4%B8%8EBBRv3%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" title="Hysteria 2 端口跳跃与 BBR v3 加速深度解析与实战配置"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/img/hy2-bbr.jpg" onerror="this.onerror=null;this.src='https://t.alcy.cc/ys'" alt="Hysteria 2 端口跳跃与 BBR v3 加速深度解析与实战配置"/></a><div class="content"><a class="title" href="/posts/Hysteria2%E7%AB%AF%E5%8F%A3%E8%B7%B3%E8%B7%83%E4%B8%8EBBRv3%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90/" title="Hysteria 2 端口跳跃与 BBR v3 加速深度解析与实战配置">Hysteria 2 端口跳跃与 BBR v3 加速深度解析与实战配置</a><time datetime="2026-10-15T02:15:00.000Z" title="发表于 2026-10-15 10:15:00">2026-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/5217%E7%A4%BE%E5%8C%BA-%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB%E7%AB%99/" title="5217社区 —— 纯粹、免费的单机游戏与绿色软件分享站"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/img/5217city-home.png" onerror="this.onerror=null;this.src='https://t.alcy.cc/ys'" alt="5217社区 —— 纯粹、免费的单机游戏与绿色软件分享站"/></a><div class="content"><a class="title" href="/posts/5217%E7%A4%BE%E5%8C%BA-%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F%E5%88%86%E4%BA%AB%E7%AB%99/" title="5217社区 —— 纯粹、免费的单机游戏与绿色软件分享站">5217社区 —— 纯粹、免费的单机游戏与绿色软件分享站</a><time datetime="2026-10-14T16:30:00.000Z" title="发表于 2026-10-15 00:30:00">2026-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/DLSS%E8%B6%85%E5%88%86%E6%98%BE%E7%A4%BA%E5%BC%80%E5%85%B3/" title="DLSS 超分显示开关 —— 一键确认游戏到底开没开 DLSS"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/img/dlss-repo.png" onerror="this.onerror=null;this.src='https://t.alcy.cc/ys'" alt="DLSS 超分显示开关 —— 一键确认游戏到底开没开 DLSS"/></a><div class="content"><a class="title" href="/posts/DLSS%E8%B6%85%E5%88%86%E6%98%BE%E7%A4%BA%E5%BC%80%E5%85%B3/" title="DLSS 超分显示开关 —— 一键确认游戏到底开没开 DLSS">DLSS 超分显示开关 —— 一键确认游戏到底开没开 DLSS</a><time datetime="2026-10-09T12:00:00.000Z" title="发表于 2026-10-09 20:00:00">2026-10-09</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://t.alcy.cc/ysz')"><div id="footer-wrap"><div class="footer_custom_text">愿风指引你的道路 · ✈️「提瓦特国际机场」✈️</div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2026 By <a class="footer-bar-link" href="/" title="旅行者" target="_blank">旅行者</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://ys.mihoyo.com/" title="原神官网">原神官网</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">世界</div><div class="back-menu-list"><a class="back-menu-item" href="/" title="✈️「提瓦特国际机场」✈️"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/favicon.ico" alt="✈️「提瓦特国际机场」✈️"/><span class="back-menu-item-text">✈️「提瓦特国际机场」✈️</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">旅途中</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://ys.mihoyo.com/" title="原神官网"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;https://t.alcy.cc/ys&quot;" data-lazy-src="/favicon.ico" alt="原神官网"/><span class="back-menu-item-text">原神官网</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 开始冒险</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 虚空终端</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/%E5%B0%8F%E6%B8%B8%E6%88%8F/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 小游戏</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/BBRv3/" style="font-size: 0.88rem;">BBRv3<sup>1</sup></a><a href="/tags/Clash/" style="font-size: 0.88rem;">Clash<sup>1</sup></a><a href="/tags/DLSS/" style="font-size: 0.88rem;">DLSS<sup>2</sup></a><a href="/tags/HDR/" style="font-size: 0.88rem;">HDR<sup>2</sup></a><a href="/tags/Hysteria2/" style="font-size: 0.88rem;">Hysteria2<sup>1</sup></a><a href="/tags/Linux%E8%BF%90%E7%BB%B4/" style="font-size: 0.88rem;">Linux运维<sup>1</sup></a><a href="/tags/NVIDIA/" style="font-size: 0.88rem;">NVIDIA<sup>1</sup></a><a href="/tags/Ultra-HDR/" style="font-size: 0.88rem;">Ultra HDR<sup>1</sup></a><a href="/tags/VPS%E4%BC%98%E5%8C%96/" style="font-size: 0.88rem;">VPS优化<sup>1</sup></a><a href="/tags/Windows%E5%B7%A5%E5%85%B7/" style="font-size: 0.88rem;">Windows工具<sup>2</sup></a><a href="/tags/%E4%BB%A3%E7%90%86%E5%AE%A2%E6%88%B7%E7%AB%AF/" style="font-size: 0.88rem;">代理客户端<sup>1</sup></a><a href="/tags/%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E5%99%A8/" style="font-size: 0.88rem;">伤害计算器<sup>1</sup></a><a href="/tags/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" style="font-size: 0.88rem;">使用教程<sup>1</sup></a><a href="/tags/%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99/" style="font-size: 0.88rem;">分流规则<sup>1</sup></a><a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 0.88rem;">动漫<sup>1</sup></a><a href="/tags/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F/" style="font-size: 0.88rem;">单机游戏<sup>1</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/" style="font-size: 0.88rem;">工具推荐<sup>1</sup></a><a href="/tags/%E5%B8%A7%E7%94%9F%E6%88%90/" style="font-size: 0.88rem;">帧生成<sup>1</sup></a><a href="/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/" style="font-size: 0.88rem;">开源软件<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 0.88rem;">数据分析<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E4%BC%98%E5%8C%96/" style="font-size: 0.88rem;">游戏优化<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/" style="font-size: 0.88rem;">游戏机制<sup>1</sup></a><a href="/tags/%E7%87%95%E4%BA%91%E5%8D%81%E5%85%AD%E5%A3%B0/" style="font-size: 0.88rem;">燕云十六声<sup>1</sup></a><a href="/tags/%E7%AB%AF%E5%8F%A3%E8%B7%B3%E8%B7%83/" style="font-size: 0.88rem;">端口跳跃<sup>1</sup></a><a href="/tags/%E7%BB%BF%E8%89%B2%E5%85%8D%E5%AE%89%E8%A3%85/" style="font-size: 0.88rem;">绿色免安装<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/" style="font-size: 0.88rem;">网站推荐<sup>1</sup></a><a href="/tags/%E8%AF%8D%E6%9D%A1%E6%94%B6%E7%9B%8A/" style="font-size: 0.88rem;">词条收益<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" style="font-size: 0.88rem;">资源分享<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="1818031620" server="netease" type="song" api="https://api.injahow.cn/meting/?server=:server&amp;type=:type&amp;id=:id" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.6"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/song?id=1818031620&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("09/28/2020 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎来到 ✈️「提瓦特国际机场」✈️ !`,
+    `风与岩的航线仍在继续，祝您旅途愉快`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 旅行者 · ✈️「提瓦特国际机场」✈️ V1.7.1",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#5B82B8",
+      "",
+      "color:#5B82B8",
+      "color:#5B82B8",
+      "",
+      "color:#5B82B8",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://t.alcy.cc/ysz") center/cover no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by Teyvat %c 你正在访问 旅行者 的 ✈️「提瓦特国际机场」✈️.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script>(function(){var armed=true;function tryPlay(){if(!armed)return;var mt=document.querySelector('#nav-music meting-js');if(!mt||!mt.aplayer)return;if(!document.querySelector('#nav-music .aplayer-music')||!document.querySelector('#nav-music .aplayer-button'))return;if(typeof anzhiyu_musicPlaying!=='undefined'&&anzhiyu_musicPlaying){armed=false;return}try{anzhiyu.musicToggle();armed=false}catch(e){}}['click','touchstart','keydown'].forEach(function(ev){window.addEventListener(ev,tryPlay,{passive:true})})})();</script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
